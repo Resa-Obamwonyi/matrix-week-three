@@ -17,17 +17,19 @@ class EmailParser:
             email_split.remove('@')
 
             self.convert_to_dict(self.keys, email_split)
+
         else:
-            print("Nopity Nope") 
+            return None
 
 
-    def convert_to_dict(self, keys, emailList):
+    def convert_to_dict(self, keys, email_split):
         '''
           Takes in two lists as params and return them as a dictionary.'''
-        emailDictionary = zip(keys, emailList)
+        emailDictionary = zip(keys, email_split)
         print(dict(emailDictionary))
 
 
 
-# testEmail = EmailParser()
-# testEmail.parse('jane+doe@yahoo.com')
+testEmail = EmailParser()
+testEmail.parse('jane+doe@yahoo.com')
+print(testEmail.parse('jane+doeyahoo.com'))
