@@ -1,15 +1,19 @@
 # Import all required modules
-from unittest import TestCase
+import unittest
+import sys
+sys.path.append('/Users/shee/Desktop/courses/we-tech-python tasks/matrix-week-three')
 from src.email_parser import EmailParser
 
 
-# sys.path.insert(0, '/Users/shee/Desktop/courses/we-tech-python tasks/matrix-week-three/src/email_parser.py')
-
-class Test(TestCase):
-    # testingParse = EmailParser()
+class Test(unittest.TestCase):
+    testingParse = EmailParser()
+    
     def test_parse(self):
-        pass
-        # self.assertRegex(EmailParser.parse('jane+doe@yahoo.com'), '([a-zA-Z0-9+/]+)(@{1})([a-zA-Z0-9]+\.{1}[c][o][m])')
-        # self.assertRegex('johndoe@gmail.com', '([a-zA-Z0-9+/]+)(@{1})([a-zA-Z0-9]+\.{1}[c][o][m])')
+        # pass
+        self.assertRegex('jane+doe@yahoo.com', '([a-zA-Z0-9+/]+)(@{1})([a-zA-Z0-9]+\.{1}[c][o][m])', self.testingParse.parse(email='jane+doe@yahoo.com'))
+        self.assertRegex('johndoe@bz2.com', '([a-zA-Z0-9+/]+)(@{1})([a-zA-Z0-9]+\.{1}[c][o][m])',  self.testingParse.parse(email='johndoe@gmail.com'))
 
+
+if __name__ == '__main__':
+    unittest.main()
 

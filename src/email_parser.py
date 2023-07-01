@@ -1,4 +1,5 @@
 import re
+import unittest
 
 class EmailParser:
     # regex pattern that validate email
@@ -8,12 +9,14 @@ class EmailParser:
     def parse(self, email):
         ''' parse email and return a dictionary of username and domain if valid and return None otherwise'''
         # Add implementation here ...
+        self.email = email
         identifiedPattern = re.search(self.pattern,email)
+        
         if identifiedPattern:
-            new_list = list(identifiedPattern.groups())
-            new_list.remove('@')
+            email_split = list(identifiedPattern.groups())
+            email_split.remove('@')
 
-            self.convert_to_dict(self.keys, new_list)
+            self.convert_to_dict(self.keys, email_split)
         else:
             print("Nopity Nope") 
 
@@ -24,5 +27,7 @@ class EmailParser:
         emailDictionary = zip(keys, emailList)
         print(dict(emailDictionary))
 
-testEmail = EmailParser()
-testEmail.parse('jane+doe@yahoo.com')
+
+
+# testEmail = EmailParser()
+# testEmail.parse('jane+doe@yahoo.com')
