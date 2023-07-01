@@ -19,7 +19,7 @@ class EmailParser:
             self.convert_to_dict(self.keys, email_split)
 
         else:
-            return "testing branch"
+            return None
 
 
     def convert_to_dict(self, keys, email_split):
