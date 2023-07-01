@@ -19,7 +19,7 @@ class EmailParser:
             self.convert_to_dict(self.keys, email_split)
 
         else:
-            return None
+            return "testing branch"
 
 
     def convert_to_dict(self, keys, email_split):
@@ -31,5 +31,5 @@ class EmailParser:
 
 
 testEmail = EmailParser()
-testEmail.parse('jane+doe@yahoo.com')
+
 print(testEmail.parse('jane+doeyahoo.com'))
